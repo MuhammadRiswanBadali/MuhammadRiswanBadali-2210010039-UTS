@@ -89,7 +89,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Kategori Transaksi", "Nominal (Rp.)", "Tanggal", "Keterangan"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -197,7 +197,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
