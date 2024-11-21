@@ -85,15 +85,23 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Kategori Transaksi", "Nominal (Rp.)", "Tanggal", "Keterangan"
+                "Kategori Transaksi", "Nominal (Rp.)", "Tanggal", "Keterangan", "ID"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -429,13 +437,19 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
                     rs.getString("kategori"),
                     rs.getInt("nominal"),
                     rs.getString("tanggal"),
-                    rs.getString("keterangan")
+                    rs.getString("keterangan"),
+                    rs.getInt("id")
                 };
                 model.addRow(row);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        
+        jTable1.getColumnModel().getColumn(4).setMinWidth(0);
+        jTable1.getColumnModel().getColumn(4).setMaxWidth(0);
+        jTable1.getColumnModel().getColumn(4).setWidth(0);
+
     }
     
     private void hitungTotal() {
