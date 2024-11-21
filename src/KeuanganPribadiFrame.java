@@ -363,5 +363,28 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }
+    
+    private void hitungTotal() {
+        int totalPemasukan = 0;
+        int totalPengeluaran = 0;
+
+        String sql = "SELECT kategori, nominal FROM transaksi";
+        try (Connection conn = DatabaseConnection.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                int nominal = rs.getInt("nominal");
+                if (rs.getString("kategori").equals("Pemasukan")) {
+                    totalPemasukan += nominal;
+                } else if (rs.getString("kategori").equals("Pengeluaran")) {
+                    totalPengeluaran += nominal;
+                }
+            }
+            jLabel7.setText("Rp. " + totalPemasukan);
+            jLabel9.setText("Rp. " + totalPengeluaran);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
 }
