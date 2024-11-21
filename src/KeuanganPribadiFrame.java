@@ -94,6 +94,11 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
                 "Kategori Transaksi", "Nominal (Rp.)", "Tanggal", "Keterangan"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Pemasukan"));
@@ -155,6 +160,11 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
         );
 
         jButton2.setText("Edit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Hapus");
 
@@ -263,6 +273,68 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
        tampilkanData();
        hitungTotal();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+       int selectedRow = jTable1.getSelectedRow();
+        if (selectedRow != -1) {
+            // Ambil data dari baris yang dipilih
+            String kategori = jTable1.getValueAt(selectedRow, 0).toString();
+            String nominal = jTable1.getValueAt(selectedRow, 1).toString();
+            String tanggal = jTable1.getValueAt(selectedRow, 2).toString();
+            String keterangan = jTable1.getValueAt(selectedRow, 3).toString();
+
+            // Masukkan data ke komponen input
+            jComboBox1.setSelectedItem(kategori);
+            jTextField1.setText(nominal);
+            try {
+                java.util.Date date = new SimpleDateFormat("yyyy-MM-dd").parse(tanggal);
+                jDateChooser1.setDate(date);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            jTextField2.setText(keterangan);
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         int selectedRow = jTable1.getSelectedRow();
+        if (selectedRow != -1) {
+            // Tampilkan dialog konfirmasi
+            int response = javax.swing.JOptionPane.showConfirmDialog(null, 
+                "Yakin melakukan perubahan?", "Konfirmasi", 
+                javax.swing.JOptionPane.YES_NO_OPTION);
+            if (response == javax.swing.JOptionPane.YES_OPTION) {
+                // Ambil data dari input
+                String kategori = jComboBox1.getSelectedItem().toString();
+                int nominal = Integer.parseInt(jTextField1.getText());
+                String tanggal = new SimpleDateFormat("yyyy-MM-dd").format(jDateChooser1.getDate());
+                String keterangan = jTextField2.getText();
+
+                // Ambil ID transaksi dari baris yang dipilih
+                String idTransaksi = jTable1.getValueAt(selectedRow, 4).toString(); // Pastikan kolom ID ditambahkan ke tabel
+
+                // Update database
+                String sql = "UPDATE transaksi SET kategori = ?, nominal = ?, tanggal = ?, keterangan = ? WHERE id = ?";
+                try (Connection conn = DatabaseConnection.connect();
+                     PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                    pstmt.setString(1, kategori);
+                    pstmt.setInt(2, nominal);
+                    pstmt.setString(3, tanggal);
+                    pstmt.setString(4, keterangan);
+                    pstmt.setInt(5, Integer.parseInt(idTransaksi));
+                    pstmt.executeUpdate();
+
+                    // Refresh tabel
+                    tampilkanData();
+                    hitungTotal();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(null, "Pilih data dari tabel terlebih dahulu.");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
