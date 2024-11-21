@@ -13,12 +13,19 @@ import java.sql.SQLException;
  * @author USER
  */
 public class DatabaseConnection {
-     public static Connection connect() {
+    public static Connection connect() {
+        Connection conn = null;
         try {
-            return DriverManager.getConnection("jdbc:sqlite:keuangan.db");
+            // Muat driver SQLite
+            Class.forName("org.sqlite.JDBC");
+            // Buat koneksi ke database
+            conn = DriverManager.getConnection("jdbc:sqlite:C:\\sqlite3\\keuangan.db");
+            System.out.println("Koneksi ke SQLite berhasil");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Driver SQLite tidak ditemukan: " + e.getMessage());
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return null;
+            System.out.println("Gagal terhubung ke database SQLite: " + e.getMessage());
         }
+        return conn;
     }
 }
