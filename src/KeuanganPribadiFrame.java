@@ -23,6 +23,8 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
      */
     public KeuanganPribadiFrame() {
         initComponents();
+        tampilkanData();
+        hitungTotal();
     }
 
     /**
