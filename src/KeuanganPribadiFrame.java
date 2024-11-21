@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.sql.SQLException;
 
 
 /*
@@ -116,7 +117,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Rp.");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setText(".....");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -145,7 +146,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Rp.");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel9.setText(".....");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -177,6 +178,11 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
         });
 
         jButton3.setText("Hapus");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Ekspor Data");
 
@@ -373,6 +379,41 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
     // Reset jComboBox1 ke default
     jComboBox1.setSelectedIndex(0); // Pastikan indeks 0 adalah "~pilih kategori transaksi~"
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int selectedRow = jTable1.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(null, "Pilih transaksi yang ingin dihapus.");
+            return;
+        }
+
+        // Ambil ID transaksi dari baris yang dipilih
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        String idTransaksi = model.getValueAt(selectedRow, 4).toString(); // Kolom ke-4 berisi ID
+
+        // Tampilkan dialog konfirmasi
+        int response = JOptionPane.showConfirmDialog(null, "Yakin ingin menghapus transaksi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+        if (response == JOptionPane.YES_OPTION) {
+            try (Connection conn = DatabaseConnection.connect()) {
+                // Hapus data dari database berdasarkan ID
+                String sql = "DELETE FROM transaksi WHERE id = ?";
+                try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                    pstmt.setInt(1, Integer.parseInt(idTransaksi));
+                    pstmt.executeUpdate();
+                }
+
+                // Hapus baris dari jTable1
+                model.removeRow(selectedRow);
+
+                // Perbarui total pemasukan dan pengeluaran
+                hitungTotal();
+
+                JOptionPane.showMessageDialog(null, "Transaksi berhasil dihapus.");
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error saat menghapus transaksi: " + e.getMessage());
+            }
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
