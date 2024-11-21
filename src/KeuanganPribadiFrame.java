@@ -2,6 +2,10 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -253,7 +257,9 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       tambahTransaksi();
+       tampilkanData();
+       hitungTotal();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -331,6 +337,28 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
             pstmt.setString(3, tanggal);
             pstmt.setString(4, keterangan);
             pstmt.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    private void tampilkanData() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+
+        String sql = "SELECT * FROM transaksi";
+        try (Connection conn = DatabaseConnection.connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                Object[] row = {
+                    rs.getString("kategori"),
+                    rs.getInt("nominal"),
+                    rs.getString("tanggal"),
+                    rs.getString("keterangan")
+                };
+                model.addRow(row);
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
