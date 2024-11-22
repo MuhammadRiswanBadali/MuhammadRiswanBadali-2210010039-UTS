@@ -495,13 +495,14 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        // Mengosongkan jTextField1
-    jTextField1.setText("");
-    // Mengosongkan jDateChooser1
-    jDateChooser1.setDate(null);
-    // Mengosongkan jTextField2
-    jTextField2.setText("");
-    // Reset jComboBox1 ke default
-    jComboBox1.setSelectedIndex(0); // Pastikan indeks 0 adalah "~pilih kategori transaksi~"
+        jTextField1.setText("");
+        // Mengosongkan jDateChooser1
+        jDateChooser1.setDate(null);
+        // Mengosongkan jTextField2
+        jTextField2.setText("");
+        // Reset jComboBox1 ke default
+        jComboBox1.setSelectedIndex(0); // Pastikan indeks 0 adalah "~pilih kategori transaksi~"
+        tampilkanData();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
