@@ -825,6 +825,14 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
         jComboBox1.setSelectedIndex(0);
     }
     private void simpanDataKeCSV() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+
+        // Cek apakah jTable1 kosong
+        if (model.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null, "Data masih kosong", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return; // Hentikan proses jika tidak ada data
+        }
+
         // Membuat file chooser untuk memilih lokasi penyimpanan
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Pilih lokasi penyimpanan file CSV");
@@ -843,7 +851,6 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
             }
 
             try (PrintWriter writer = new PrintWriter(fileToSave)) {
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                 int columnCount = model.getColumnCount();
 
                 // Menulis header kolom
@@ -869,38 +876,45 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
         }
     }
     private void resetData() {
-        // Tampilkan pesan peringatan awal
-        JOptionPane.showMessageDialog(null, 
-            "Pastikan Anda sudah melakukan simpan data sebelum melakukan reset data.", 
-            "Peringatan", JOptionPane.WARNING_MESSAGE);
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 
-        // Konfirmasi penghapusan data
-        int response = JOptionPane.showConfirmDialog(null, 
-            "Yakin ingin menghapus semua data?", "Konfirmasi", 
-            JOptionPane.YES_NO_OPTION);
+         // Cek apakah jTable1 kosong
+         if (model.getRowCount() == 0) {
+             JOptionPane.showMessageDialog(null, "Data masih kosong", "Peringatan", JOptionPane.WARNING_MESSAGE);
+             return; // Hentikan proses jika tidak ada data
+         }
 
-        if (response == JOptionPane.YES_OPTION) {
-            // Hapus semua data di database
-            try (Connection conn = DatabaseConnection.connect();
-                 Statement stmt = conn.createStatement()) {
+         // Tampilkan pesan peringatan awal
+         JOptionPane.showMessageDialog(null, 
+             "Pastikan Anda sudah melakukan simpan data sebelum melakukan reset data.", 
+             "Peringatan", JOptionPane.WARNING_MESSAGE);
 
-                // Eksekusi query untuk menghapus seluruh data di tabel transaksi
-                String sql = "DELETE FROM transaksi";
-                stmt.executeUpdate(sql);
+         // Konfirmasi penghapusan data
+         int response = JOptionPane.showConfirmDialog(null, 
+             "Yakin ingin menghapus semua data?", "Konfirmasi", 
+             JOptionPane.YES_NO_OPTION);
 
-                // Kosongkan jTable1
-                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-                model.setRowCount(0); // Menghapus semua baris dari jTable1
+         if (response == JOptionPane.YES_OPTION) {
+             // Hapus semua data di database
+             try (Connection conn = DatabaseConnection.connect();
+                  Statement stmt = conn.createStatement()) {
 
-                // Setel jLabel7 dan jLabel9 ke 0
-                jLabel7.setText("0"); // Reset total pemasukan
-                jLabel9.setText("0"); // Reset total pengeluaran
+                 // Hapus data (bukan tabel) dari tabel transaksi
+                 String sql = "DELETE FROM transaksi";
+                 stmt.executeUpdate(sql);
 
-                JOptionPane.showMessageDialog(null, "Semua data berhasil dihapus.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+                 // Kosongkan jTable1
+                 model.setRowCount(0); // Menghapus semua baris dari jTable1
 
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "Error saat menghapus data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }
+                 // Setel jLabel7 dan jLabel9 ke 0
+                 jLabel7.setText("0"); // Reset total pemasukan
+                 jLabel9.setText("0"); // Reset total pengeluaran
+
+                 JOptionPane.showMessageDialog(null, "Semua data berhasil dihapus.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+
+             } catch (SQLException e) {
+                 JOptionPane.showMessageDialog(null, "Error saat menghapus data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+             }
+         }
+     }
 }
