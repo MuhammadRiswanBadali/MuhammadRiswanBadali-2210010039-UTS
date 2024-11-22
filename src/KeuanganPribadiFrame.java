@@ -1,4 +1,6 @@
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
@@ -7,6 +9,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.sql.SQLException;
+import javax.swing.JFileChooser;
 
 
 /*
@@ -258,7 +261,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Ekspor Data");
+        jButton4.setText("Simpan Data");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -284,7 +287,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Reset");
+        jButton6.setText("Clear");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -364,7 +367,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addGap(9, 9, 9)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -550,7 +553,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1KeyTyped
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        simpanDataKeCSV();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -808,6 +811,50 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
         jDateChooser1.setDate(null);
         jTextField2.setText("");
         jComboBox1.setSelectedIndex(0);
+    }
+    private void simpanDataKeCSV() {
+        // Membuat file chooser untuk memilih lokasi penyimpanan
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Pilih lokasi penyimpanan file CSV");
+
+        // Filter hanya untuk file CSV
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("CSV files", "csv"));
+
+        // Jika pengguna mengklik tombol simpan
+        int userSelection = fileChooser.showSaveDialog(this);
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToSave = fileChooser.getSelectedFile();
+
+            // Pastikan file memiliki ekstensi .csv
+            if (!fileToSave.getAbsolutePath().endsWith(".csv")) {
+                fileToSave = new File(fileToSave + ".csv");
+            }
+
+            try (PrintWriter writer = new PrintWriter(fileToSave)) {
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                int columnCount = model.getColumnCount();
+
+                // Menulis header kolom
+                for (int i = 0; i < columnCount; i++) {
+                    writer.print(model.getColumnName(i));
+                    if (i < columnCount - 1) writer.print(","); // Tambahkan koma jika bukan kolom terakhir
+                }
+                writer.println();
+
+                // Menulis data baris
+                for (int row = 0; row < model.getRowCount(); row++) {
+                    for (int col = 0; col < columnCount; col++) {
+                        writer.print(model.getValueAt(row, col).toString());
+                        if (col < columnCount - 1) writer.print(","); // Tambahkan koma jika bukan kolom terakhir
+                    }
+                    writer.println();
+                }
+
+                JOptionPane.showMessageDialog(this, "Data berhasil disimpan ke file CSV.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Error saat menyimpan file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }
 
 }
