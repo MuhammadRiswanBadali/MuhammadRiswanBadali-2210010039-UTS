@@ -55,9 +55,21 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
 # TAMPILAN APLIKASI YANG DIBUAT (KEUANGAN PRIBADI)
 1. Tampilan awal aplikasi.<br>
 <img width="567" alt="1" src="https://github.com/user-attachments/assets/3c90600d-93ff-4503-9c88-33182eb23dde"><br>
-2. Tampilan ketika menekan button Tambah Transaksi, tetapi inputan belum terisi semua.<br>
-   a. kategori transaksi belum di pilih.<br>
+2. Tampilan ketika menekan button Tambah Transaksi, tetapi inputan belum terisi semua :<br>
+   a. kategori transaksi belum di pilih<br>
       <img width="569" alt="2" src="https://github.com/user-attachments/assets/6c38775f-2952-4d03-abee-44127f971e7d"><br>
-   b. Belum mengimputkan nominal.<br>
+   b. Belum mengimputkan nominal<br>
       <img width="569" alt="image" src="https://github.com/user-attachments/assets/76b35a11-243b-43f7-8a57-afb1a4d4158f"><br>
-   c. 
+   c. Belum menginputkan tanggal<br>
+      <img width="565" alt="image" src="https://github.com/user-attachments/assets/090f5c24-e979-44e7-b8ec-10bea753de25"><br>
+   d. Belum menginputkan kategori<br>
+      <img width="566" alt="image" src="https://github.com/user-attachments/assets/dc3dcdfe-7bbf-48ad-bae4-f671f40f6fe6"><br>
+3. Tampilan ketika semua inputan terisi, lalu menekan button Tambah Transaksi<br>
+<img width="566" alt="image" src="https://github.com/user-attachments/assets/8f2f187a-9b08-4182-a47c-910a6a82d4ab"><br>
+4. Semua data yang di inputkan tadi masuk ke tabel dan untuk total keseluruhan pemasukan juga masuk ke panel pemasukan<br>
+<img width="569" alt="image" src="https://github.com/user-attachments/assets/2a590733-3b2c-4d6a-888e-31df1641d7d1"><br>
+5. Menginputkan dengan kategori pengeluaran<br>
+<img width="568" alt="image" src="https://github.com/user-attachments/assets/3a75e343-e84c-4645-a62e-156699b6d1f5"><br>
+
+
+
