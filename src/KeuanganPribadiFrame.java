@@ -1,18 +1,17 @@
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.text.SimpleDateFormat;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import java.sql.SQLException;
-import javax.swing.JFileChooser;
-
+// Import library yang dibutuhkan untuk melakukan operasi file, database, dan GUI
+import java.io.BufferedReader; // Untuk membaca data dari file
+import java.io.File; // Untuk bekerja dengan file
+import java.io.FileReader; // Untuk membaca file
+import java.io.PrintWriter; // Untuk menulis ke file
+import java.sql.Connection; // Untuk membuat koneksi ke database
+import java.sql.PreparedStatement; // Untuk menjalankan query dengan parameter
+import java.text.SimpleDateFormat; // Untuk format tanggal
+import java.sql.ResultSet; // Untuk menyimpan hasil query
+import java.sql.Statement; // Untuk menjalankan query tanpa parameter
+import javax.swing.JOptionPane; // Untuk menampilkan pesan dialog
+import javax.swing.table.DefaultTableModel; // Untuk model tabel di JTable
+import java.sql.SQLException; // Untuk menangani error SQL
+import javax.swing.JFileChooser; // Untuk memilih file melalui dialog file
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -30,8 +29,8 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
      */
     public KeuanganPribadiFrame() {
         initComponents();
-        tampilkanData();
-        hitungTotal();
+        tampilkanData(); // Memanggil method tampilData()
+        hitungTotal(); // Memanggil method hitungTotal()
     }
 
     /**
@@ -116,29 +115,28 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(126, 126, 126)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(jButton1)))
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jButton1))
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -161,9 +159,9 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 4, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -382,7 +380,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -400,103 +398,113 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       tambahTransaksi();
-       tampilkanData();
-       hitungTotal();
+       tambahTransaksi(); // Memanggil method tambahTransaksi()
+       tampilkanData(); // Memanggil method tampilkanData()
+       hitungTotal(); // Memanggil method hitungTotal()
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
+    // Event handler ketika baris di jTable1 diklik
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+         // Mendapatkan baris yang dipilih dari jTable1
         int selectedRow = jTable1.getSelectedRow();
+         // Jika ada baris yang dipilih
         if (selectedRow != -1) {
             // Ambil data dari baris yang dipilih
-            String kategori = jTable1.getValueAt(selectedRow, 0).toString();
-            String nominal = jTable1.getValueAt(selectedRow, 1).toString();
-            String tanggal = jTable1.getValueAt(selectedRow, 2).toString(); // Tanggal dalam format dd-MM-yyyy
-            String keterangan = jTable1.getValueAt(selectedRow, 3).toString();
-
-            // Masukkan data ke komponen input
-            jComboBox1.setSelectedItem(kategori);
-            jTextField1.setText(nominal);
-
-            // Konversi tanggal dari format dd-MM-yyyy ke java.util.Date
+            String kategori = jTable1.getValueAt(selectedRow, 0).toString(); // Kategori transaksi (kolom pertama)
+            String nominal = jTable1.getValueAt(selectedRow, 1).toString(); // Nominal transaksi (kolom kedua)
+            String tanggal = jTable1.getValueAt(selectedRow, 2).toString(); // Tanggal transaksi (kolom ketiga, format dd-MM-yyyy)
+            String keterangan = jTable1.getValueAt(selectedRow, 3).toString(); // Keterangan transaksi (kolom keempat)
+            // Memasukkan data yang dipilih ke komponen input (seperti JComboBox, JTextField, dan JDateChooser)
+            jComboBox1.setSelectedItem(kategori); // Menampilkan kategori di JComboBox
+            jTextField1.setText(nominal); // Menampilkan nominal di JTextField
+            // Mengonversi string tanggal dari format dd-MM-yyyy ke objek java.util.Date
             try {
-                java.util.Date date = new SimpleDateFormat("dd-MM-yyyy").parse(tanggal);
-                jDateChooser1.setDate(date);
+                java.util.Date date = new SimpleDateFormat("dd-MM-yyyy").parse(tanggal);  // Parsing tanggal
+                jDateChooser1.setDate(date);  // Menampilkan tanggal di JDateChooser
             } catch (Exception e) {
+                 // Menangani error jika terjadi kesalahan saat parsing tanggal
                 System.out.println("Error parsing date: " + e.getMessage());
             }
-
+            // Menampilkan keterangan di JTextField
             jTextField2.setText(keterangan);
         }
     }//GEN-LAST:event_jTable1MouseClicked
-
+    
+// Event handler ketika tombol jButton2 diklik
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Mendapatkan baris yang dipilih dari jTable1
         int selectedRow = jTable1.getSelectedRow();
+        // Cek jika ada baris yang dipilih
         if (selectedRow != -1) {
-            // Validasi kategori transaksi
+            // Validasi kategori transaksi, pastikan kategori yang dipilih valid
             if (jComboBox1.getSelectedIndex() == 0) {
+                // Jika kategori tidak valid, tampilkan pesan peringatan
                 JOptionPane.showMessageDialog(this, "Pilih kategori transaksi yang valid.", "Peringatan", JOptionPane.WARNING_MESSAGE);
                 return; // Hentikan proses jika kategori tidak valid
             }
-            // Validasi apakah input kosong
+             // Validasi input nominal tidak boleh kosong
             if (jTextField1.getText().trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Nominal tidak boleh kosong.", "Peringatan", JOptionPane.WARNING_MESSAGE);
-                return;
+                return; // Hentikan proses jika nominal kosong
             }
+             // Validasi apakah tanggal telah dipilih
             if (jDateChooser1.getDate() == null) {
                 JOptionPane.showMessageDialog(null, "Tanggal tidak boleh kosong.", "Peringatan", JOptionPane.WARNING_MESSAGE);
-                return;
+                return; // Hentikan proses jika tanggal kosong
             }
+            // Validasi keterangan tidak boleh kosong
             if (jTextField2.getText().trim().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Keterangan tidak boleh kosong.", "Peringatan", JOptionPane.WARNING_MESSAGE);
-                return;
+                return;  // Hentikan proses jika keterangan kosong
             }
-
-            // Tampilkan dialog konfirmasi
+            // Tampilkan dialog konfirmasi untuk memastikan perubahan transaksi
             int response = JOptionPane.showConfirmDialog(null, 
                 "Yakin melakukan perubahan?", "Konfirmasi", 
                 JOptionPane.YES_NO_OPTION);
+            // Jika pengguna memilih "Yes", lanjutkan dengan update
             if (response == JOptionPane.YES_OPTION) {
                 // Ambil data dari input
                 String kategori = jComboBox1.getSelectedItem().toString();
                 int nominal = Integer.parseInt(jTextField1.getText().trim());
                 String tanggal = new SimpleDateFormat("yyyy-MM-dd").format(jDateChooser1.getDate());
                 String keterangan = jTextField2.getText().trim();
-
-                // Ambil ID transaksi dari baris yang dipilih
+                // Ambil ID transaksi dari baris yang dipilih di tabel
                 String idTransaksi = jTable1.getValueAt(selectedRow, 4).toString(); // Pastikan kolom ID ditambahkan ke tabel
-
-                // Update database
+                // SQL query untuk mengupdate transaksi di database
                 String sql = "UPDATE transaksi SET kategori = ?, nominal = ?, tanggal = ?, keterangan = ? WHERE id = ?";
-                try (Connection conn = DatabaseConnection.connect();
-                     PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                try (Connection conn = DatabaseConnection.connect(); // Membuka koneksi ke database
+                    PreparedStatement pstmt = conn.prepareStatement(sql)) { // Menyiapkan statement SQL untuk eksekusi
+                    // Set parameter untuk prepared statement
                     pstmt.setString(1, kategori);
                     pstmt.setInt(2, nominal);
                     pstmt.setString(3, tanggal);
                     pstmt.setString(4, keterangan);
                     pstmt.setInt(5, Integer.parseInt(idTransaksi));
+                    // Eksekusi update transaksi
                     pstmt.executeUpdate();
-
-                    // Refresh tabel dan hitung ulang total
+                   // Setelah update, refresh data tabel dan hitung total
                     tampilkanData();
                     hitungTotal();
-
+                    // Tampilkan pesan informasi jika transaksi berhasil diperbarui
                     JOptionPane.showMessageDialog(null, "Transaksi berhasil diperbarui.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
-
+                    
                     // Kosongkan input setelah transaksi diedit
-                    jTextField1.setText("");
-                    jDateChooser1.setDate(null);
-                    jTextField2.setText("");
+                    jTextField1.setText(""); // Kosongkan nominal
+                    jDateChooser1.setDate(null); // Kosongkan tanggal
+                    jTextField2.setText(""); // Kosongkan keterangan
                     jComboBox1.setSelectedIndex(0);  // Kembali ke pilihan "Pilih Kategori Transaksi"
                 } catch (Exception e) {
+                     // Tangani jika terjadi kesalahan dalam proses update
                     JOptionPane.showMessageDialog(null, "Terjadi kesalahan saat memperbarui transaksi: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         } else {
+            // Jika tidak ada baris yang dipilih di tabel, tampilkan pesan peringatan
             JOptionPane.showMessageDialog(null, "Pilih data dari tabel terlebih dahulu.", "Peringatan", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    // Event handler untuk tombol jButton5 yang berfungsi untuk mengosongkan input dan menampilkan data ulang
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        // Mengosongkan jTextField1
         jTextField1.setText("");
@@ -506,78 +514,91 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
         jTextField2.setText("");
         // Reset jComboBox1 ke default
         jComboBox1.setSelectedIndex(0); // Pastikan indeks 0 adalah "~pilih kategori transaksi~"
-        tampilkanData();
+        tampilkanData();// Memanggil fungsi tampilkanData untuk menampilkan data transaksi
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    
+    // Event handler ketika tombol jButton3 diklik (fungsi untuk menghapus transaksi)
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       // Mendapatkan baris yang dipilih dari jTable1
        int selectedRow = jTable1.getSelectedRow();
-        if (selectedRow == -1) {
+       // Jika tidak ada baris yang dipilih, tampilkan pesan peringatan dan hentikan proses
+       if (selectedRow == -1) {
             JOptionPane.showMessageDialog(this, "Pilih transaksi yang ingin dihapus.", "Peringatan", JOptionPane.WARNING_MESSAGE);
             return;
         }
-
-        // Ambil ID transaksi dari baris yang dipilih
+        // Mendapatkan ID transaksi dari baris yang dipilih di jTable1
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        String idTransaksi = model.getValueAt(selectedRow, 4).toString(); // Kolom ke-4 berisi ID
-
-        // Tampilkan dialog konfirmasi
+        String idTransaksi = model.getValueAt(selectedRow, 4).toString(); // ID transaksi ada di kolom ke-5
+         // Menampilkan dialog konfirmasi untuk memastikan penghapusan transaksi
         int response = JOptionPane.showConfirmDialog(this, "Yakin ingin menghapus transaksi ini?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
+         // Jika pengguna memilih "Yes", lanjutkan dengan penghapusan
         if (response == JOptionPane.YES_OPTION) {
             try (Connection conn = DatabaseConnection.connect()) {
-                // Hapus data dari database berdasarkan ID
+                // SQL query untuk menghapus data dari database berdasarkan ID transaksi
                 String sql = "DELETE FROM transaksi WHERE id = ?";
                 try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                      // Set parameter ID transaksi pada query
                     pstmt.setInt(1, Integer.parseInt(idTransaksi));
+                     // Eksekusi perintah hapus (DELETE) pada database
                     pstmt.executeUpdate();
                 }
-
-                // Hapus baris dari jTable1
+                // Hapus baris dari jTable1 setelah transaksi berhasil dihapus dari database
                 model.removeRow(selectedRow);
-
-                // Perbarui total pemasukan dan pengeluaran
+                // Perbarui total pemasukan dan pengeluaran setelah penghapusan
                 hitungTotal();
-
+                 // Tampilkan pesan bahwa transaksi berhasil dihapus
                 JOptionPane.showMessageDialog(this, "Transaksi berhasil dihapus.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
-
+                
                 // Kosongkan input setelah transaksi dihapus
-                jTextField1.setText("");
-                jDateChooser1.setDate(null);
-                jTextField2.setText("");
+                jTextField1.setText(""); // Kosongkan nominal
+                jDateChooser1.setDate(null); // Kosongkan tanggal
+                jTextField2.setText(""); // Kosongkan keterangan
                 jComboBox1.setSelectedIndex(0);  // Kembali ke pilihan "Pilih Kategori Transaksi"
             } catch (SQLException e) {
+                 // Menangani error jika terjadi kesalahan saat menghapus transaksi
                 JOptionPane.showMessageDialog(this, "Error saat menghapus transaksi: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    
+    // Event handler untuk jTextField1 hanya dapat memasukkan angka
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
-         char c = evt.getKeyChar();
+        // Mengambil karakter yang ditekan
+        char c = evt.getKeyChar();
+         // Memeriksa apakah karakter yang ditekan bukan angka
         if (!Character.isDigit(c)) { 
+            // Jika karakter bukan angka, batalkan karakter agar tidak muncul di jTextField1
             evt.consume();
         }    
     }//GEN-LAST:event_jTextField1KeyTyped
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // Memanggil fungsi simpanDataKeCSV untuk menyimpan data dari jTable1 ke file CSV
         simpanDataKeCSV();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // Memanggil fungsi filterData untuk memfilter data berdasarkan pilihan di jComboBox2
         filterData();
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jDateChooser2PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser2PropertyChange
+        // Memanggil fungsi filterData untuk memfilter data berdasarkan tanggal yang dipilih di jDateChooser2
         filterData();
     }//GEN-LAST:event_jDateChooser2PropertyChange
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+         // Memanggil fungsi resetFilters untuk menghapus filter yang diterapkan dan menampilkan semua data
         resetFilters();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // Memanggil fungsi resetData untuk mengatur ulang data ke kondisi awal (jika ada perubahan)
         resetData();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // Memanggil fungsi importData untuk mengimpor data ke dalam aplikasi
         importData();
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -651,367 +672,355 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
 
     private void tambahTransaksi() {
         // Validasi kategori transaksi
-        if (jComboBox1.getSelectedIndex() == 0) {
+        if (jComboBox1.getSelectedIndex() == 0) { // Periksa apakah kategori yang dipilih adalah pilihan default
             JOptionPane.showMessageDialog(this, "Pilih kategori transaksi yang valid.", "Peringatan", JOptionPane.WARNING_MESSAGE);
             return; // Hentikan proses jika kategori tidak valid
         }
-
+        
         // Validasi apakah input kosong
-        if (jTextField1.getText().trim().isEmpty()) {
+        if (jTextField1.getText().trim().isEmpty()) { // Periksa jika jTextField1 kosong setelah di-trim
             JOptionPane.showMessageDialog(this, "Nominal tidak boleh kosong.", "Peringatan", JOptionPane.WARNING_MESSAGE);
-            return;
+            return;  // Hentikan proses jika nominal kosong
         }
-        if (jDateChooser1.getDate() == null) {
+        // Validasi apakah input tanggal kosong
+        if (jDateChooser1.getDate() == null) { // Periksa apakah jDateChooser1 belum dipilih
             JOptionPane.showMessageDialog(this, "Tanggal tidak boleh kosong.", "Peringatan", JOptionPane.WARNING_MESSAGE);
-            return;
+            return; // Hentikan proses jika tanggal kosong
         }
-        if (jTextField2.getText().trim().isEmpty()) {
+        // Validasi apakah input keterangan kosong
+        if (jTextField2.getText().trim().isEmpty()) { // Periksa jika jTextField2 kosong setelah di-trim
             JOptionPane.showMessageDialog(this, "Keterangan tidak boleh kosong.", "Peringatan", JOptionPane.WARNING_MESSAGE);
-            return;
+            return;//Hentikan proses jika keterangan kosong 
         }
-
+        
         // Jika semua input sudah diisi dengan benar, lanjutkan ke penyimpanan data
-        String kategori = jComboBox1.getSelectedItem().toString();
-        int nominal = Integer.parseInt(jTextField1.getText().trim());
-        String tanggal = new SimpleDateFormat("yyyy-MM-dd").format(jDateChooser1.getDate());
-        String keterangan = jTextField2.getText().trim();
-
+        String kategori = jComboBox1.getSelectedItem().toString(); // Dapatkan kategori yang dipilih dari jComboBox1
+        int nominal = Integer.parseInt(jTextField1.getText().trim()); // Konversi input nominal ke integer
+        String tanggal = new SimpleDateFormat("yyyy-MM-dd").format(jDateChooser1.getDate()); // Format tanggal menjadi yyyy-MM-dd
+        String keterangan = jTextField2.getText().trim(); // Dapatkan input keterangan yang telah di-trim
+        // Query SQL untuk memasukkan data transaksi ke dalam tabel database
         String sql = "INSERT INTO transaksi(kategori, nominal, tanggal, keterangan) VALUES(?,?,?,?)";
 
-        try (Connection conn = DatabaseConnection.connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, kategori);
-            pstmt.setInt(2, nominal);
-            pstmt.setString(3, tanggal);
-            pstmt.setString(4, keterangan);
-            pstmt.executeUpdate();
+        try (Connection conn = DatabaseConnection.connect(); // Membuka koneksi ke database
+             PreparedStatement pstmt = conn.prepareStatement(sql)) { // Mempersiapkan query dengan PreparedStatement
+            pstmt.setString(1, kategori); // Set nilai kategori pada parameter pertama
+            pstmt.setInt(2, nominal); // Set nilai nominal pada parameter kedua
+            pstmt.setString(3, tanggal); // Set nilai tanggal pada parameter ketiga
+            pstmt.setString(4, keterangan); // Set nilai keterangan pada parameter keempat
+            pstmt.executeUpdate(); // Eksekusi query untuk menyimpan data ke database
 
             JOptionPane.showMessageDialog(this, "Transaksi berhasil ditambahkan.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
-            // Refresh tabel dan total
-            tampilkanData();
-            hitungTotal();
+             // Refresh tabel dan hitung ulang total setelah transaksi ditambahkan
+            tampilkanData(); // Tampilkan data terbaru di tabel
+            hitungTotal(); // Hitung ulang total pemasukan dan pengeluaran
             // Kosongkan input setelah transaksi ditambahkan
-            jTextField1.setText("");
-            jDateChooser1.setDate(null);
-            jTextField2.setText("");
+            jTextField1.setText(""); // Kosongkan jTextField1
+            jDateChooser1.setDate(null); // Kosongkan jDateChooser1
+            jTextField2.setText(""); // Kosongkan jTextField2
             jComboBox1.setSelectedIndex(0);  // Kembali ke pilihan "Pilih Kategori Transaksi"
-        } catch (Exception e) {
+        } catch (Exception e) { // Tangani exception jika terjadi kesalahan saat menyimpan data
             JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     
     private void tampilkanData() {
-    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-    model.setRowCount(0); // Bersihkan data pada jTable1 sebelum ditampilkan
+        // Ambil model dari jTable1 agar kita bisa mengatur datanya
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0); // Hapus semua data yang ada di tabel sebelum menambahkan data baru
 
-    String sql = "SELECT * FROM transaksi";
-    try (Connection conn = DatabaseConnection.connect();
-         Statement stmt = conn.createStatement();
-         ResultSet rs = stmt.executeQuery(sql)) {
-        
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        
-        while (rs.next()) {
-            String kategori = rs.getString("kategori");
-            int nominal = rs.getInt("nominal");
-            String tanggal = rs.getString("tanggal"); // Tanggal dalam format database
-            
-            // Konversi tanggal dari format yyyy-MM-dd ke format dd-MM-yyyy
-            String formattedDate = "";
-            try {
-                java.util.Date date = new SimpleDateFormat("yyyy-MM-dd").parse(tanggal);
-                formattedDate = dateFormat.format(date);
-            } catch (Exception e) {
-                System.out.println("Error parsing date: " + e.getMessage());
+        String sql = "SELECT * FROM transaksi";  // Query untuk mengambil semua data dari tabel transaksi
+        try (Connection conn = DatabaseConnection.connect(); // Buka koneksi ke database
+             Statement stmt = conn.createStatement(); // Buat pernyataan SQL
+             ResultSet rs = stmt.executeQuery(sql)) { // Jalankan query dan simpan hasilnya di rs       
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy"); // Format tanggal untuk ditampilkan di tabel
+            // Loop melalui setiap baris data di hasil query
+            while (rs.next()) {
+                String kategori = rs.getString("kategori"); // Ambil data kategori
+                int nominal = rs.getInt("nominal"); // Ambil data nominal
+                String tanggal = rs.getString("tanggal"); // Ambil data tanggal dalam format database            
+                // Konversi tanggal dari format yyyy-MM-dd ke format dd-MM-yyyy
+                String formattedDate = "";  // Siapkan variabel untuk menyimpan tanggal yang sudah diformat
+                try {
+                    java.util.Date date = new SimpleDateFormat("yyyy-MM-dd").parse(tanggal); // Ubah string tanggal ke tipe Date
+                    formattedDate = dateFormat.format(date); // Format tanggal menjadi dd-MM-yyyy
+                } catch (Exception e) {
+                    System.out.println("Error parsing date: " + e.getMessage()); // Tampilkan pesan jika terjadi kesalahan saat memformat tanggal
+                }
+                String keterangan = rs.getString("keterangan"); // Ambil data keterangan
+                int id = rs.getInt("id");  // Ambil data ID transaksi          
+                // Tambahkan baris data ke tabel
+                model.addRow(new Object[]{kategori, nominal, formattedDate, keterangan, id});
             }
-
-            String keterangan = rs.getString("keterangan");
-            int id = rs.getInt("id"); // Asumsi kolom ID ada di tabel
-            
-            // Tambahkan baris ke model dengan tanggal yang diformat
-            model.addRow(new Object[]{kategori, nominal, formattedDate, keterangan, id});
+        } catch (Exception e) {
+            System.out.println(e.getMessage()); // Tampilkan pesan jika terjadi kesalahan koneksi atau query
         }
-    } catch (Exception e) {
-        System.out.println(e.getMessage());
+        // Sembunyikan kolom ID di jTable1
+        jTable1.getColumnModel().getColumn(4).setMinWidth(0);
+        jTable1.getColumnModel().getColumn(4).setMaxWidth(0);
+        jTable1.getColumnModel().getColumn(4).setWidth(0);
     }
-
-    // Sembunyikan kolom ID (jika tidak ingin ditampilkan)
-    jTable1.getColumnModel().getColumn(4).setMinWidth(0);
-    jTable1.getColumnModel().getColumn(4).setMaxWidth(0);
-    jTable1.getColumnModel().getColumn(4).setWidth(0);
-}
-
     
     private void hitungTotal() {
-        int totalPemasukan = 0;
-        int totalPengeluaran = 0;
+        int totalPemasukan = 0; // Variabel untuk menyimpan total pemasukan
+        int totalPengeluaran = 0; // Variabel untuk menyimpan total pengeluaran
 
-        String sql = "SELECT kategori, nominal FROM transaksi";
-        try (Connection conn = DatabaseConnection.connect();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+        String sql = "SELECT kategori, nominal FROM transaksi"; // Query SQL untuk mengambil kategori dan nominal dari tabel transaksi
+        try (Connection conn = DatabaseConnection.connect();  // Buka koneksi ke database
+             Statement stmt = conn.createStatement(); // Buat objek Statement untuk menjalankan query
+             ResultSet rs = stmt.executeQuery(sql)) { // Jalankan query dan simpan hasilnya di ResultSet
+            // Loop untuk menghitung total pemasukan dan pengeluaran
             while (rs.next()) {
-                int nominal = rs.getInt("nominal");
-                if (rs.getString("kategori").equals("Pemasukan")) {
-                    totalPemasukan += nominal;
-                } else if (rs.getString("kategori").equals("Pengeluaran")) {
-                    totalPengeluaran += nominal;
+                int nominal = rs.getInt("nominal"); // Ambil nilai nominal (jumlah uang) dari database
+                if (rs.getString("kategori").equals("Pemasukan")) { // Jika kategori adalah "Pemasukan"
+                    totalPemasukan += nominal;  // Tambahkan nominal ke total pemasukan
+                } else if (rs.getString("kategori").equals("Pengeluaran")) { // Jika kategori adalah "Pengeluaran"
+                    totalPengeluaran += nominal; // Tambahkan nominal ke total pengeluaran
                 }
             }
-            jLabel7.setText("Rp. " + totalPemasukan);
-            jLabel9.setText("Rp. " + totalPengeluaran);
+            // Tampilkan total pemasukan dan pengeluaran di jLabel7 dan jLabel9
+            jLabel7.setText("Rp. " + totalPemasukan); // Set teks jLabel7 untuk menampilkan total pemasukan
+            jLabel9.setText("Rp. " + totalPengeluaran); // Set teks jLabel9 untuk menampilkan total pengeluaran
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()); // Tampilkan pesan jika terjadi kesalahan dalam koneksi atau query
         }
     }
+    
     private void filterData() {
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0); // Clear previous data
-
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel(); // Ambil model dari jTable1 untuk manipulasi data
+        model.setRowCount(0); // Bersihkan data pada jTable1 sebelum menampilkan data yang difilter
         // Ambil kategori yang dipilih
         String kategoriFilter = jComboBox2.getSelectedItem().toString();
-
+        
         // Ambil tanggal yang dipilih
         java.util.Date selectedDate = jDateChooser2.getDate();
         String formattedDate = null;
         if (selectedDate != null) {
+            // Format tanggal menjadi yyyy-MM-dd jika tanggal dipilih
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             formattedDate = sdf.format(selectedDate);
         }
-
-        // Jika kategori tidak valid (indeks 0) dan tanggal tidak dipilih, hentikan proses
+        // Jika kategori dan tanggal belum dipilih, hentikan proses filter
         if (jComboBox2.getSelectedIndex() == 0 && formattedDate == null) {
             return;
         }
-
-        // Membuat query dasar
+        // Membuat query untuk mengambil data dari tabel transaksi
         String sql = "SELECT * FROM transaksi WHERE 1=1";
-
+        
         // Menambahkan kondisi kategori jika kategori valid (bukan "Pilih Kategori")
         if (jComboBox2.getSelectedIndex() != 0) {
-            sql += " AND kategori = '" + kategoriFilter + "'";
+            sql += " AND kategori = '" + kategoriFilter + "'"; // Filter berdasarkan kategori
         }
-
+        
         // Menambahkan kondisi tanggal jika tanggal dipilih
         if (formattedDate != null) {
-            sql += " AND tanggal = '" + formattedDate + "'";
+            sql += " AND tanggal = '" + formattedDate + "'"; // Filter berdasarkan tanggal
         }
-
-        try (Connection conn = DatabaseConnection.connect();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-
+        try (Connection conn = DatabaseConnection.connect(); // Buka koneksi ke database
+             Statement stmt = conn.createStatement(); // Buat objek Statement untuk menjalankan query
+             ResultSet rs = stmt.executeQuery(sql)) { // Jalankan query dan simpan hasilnya di ResultSet
             // Menampilkan data yang sesuai di jTable1
             while (rs.next()) {
-                String kategori = rs.getString("kategori");
-                int nominal = rs.getInt("nominal");
-                String tanggal = rs.getString("tanggal");
-                String keterangan = rs.getString("keterangan");
-                int id = rs.getInt("id");
-
-                // Tambahkan data yang sesuai ke tabel
+                String kategori = rs.getString("kategori"); // Ambil data kategori dari database
+                int nominal = rs.getInt("nominal"); // Ambil data nominal dari database
+                String tanggal = rs.getString("tanggal"); // Ambil data tanggal dari database
+                String keterangan = rs.getString("keterangan"); // Ambil data keterangan dari database
+                int id = rs.getInt("id"); // Ambil data id dari database
+               // Tambahkan data yang difilter ke tabel
                 model.addRow(new Object[]{kategori, nominal, tanggal, keterangan, id});
             }
 
         } catch (SQLException e) {
+            // Tampilkan pesan jika terjadi kesalahan dalam koneksi atau query
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+    
     private void resetFilters() {
-        // Set jComboBox2 ke pilihan awal
-        jComboBox2.setSelectedIndex(0); // "Pilih Kategori"
-
-        // Kosongkan jDateChooser2 (tanggal)
-        jDateChooser2.setDate(null);
-
-        // Menampilkan semua data di jTable1 tanpa filter
-        tampilkanData();  // Fungsi ini akan menampilkan semua data dari database
-        
-        jTextField1.setText("");
-        jDateChooser1.setDate(null);
-        jTextField2.setText("");
-        jComboBox1.setSelectedIndex(0);
+        jComboBox2.setSelectedIndex(0);  // Set jComboBox2 ke pilihan awal
+        jDateChooser2.setDate(null); // Kosongkan jDateChooser2 (tanggal)
+        tampilkanData();  // Menampilkan kembali semua data di jTable1 tanpa filter, dengan memanggil fungsi tampilkanData()      
+        jTextField1.setText("");  // Mengosongkan input pada jTextField1 (nominal transaksi)
+        jDateChooser1.setDate(null); // Mengosongkan jDateChooser1 sehingga tanggal transaksi menjadi kosong
+        jTextField2.setText(""); // Mengosongkan input pada jTextField2 (keterangan transaksi)
+        jComboBox1.setSelectedIndex(0); // Mengatur jComboBox1 ke pilihan awal 
     }
+    
     private void simpanDataKeCSV() {
+        // Mendapatkan model dari jTable1 untuk membaca data yang akan disimpan
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-
+        
         // Cek apakah jTable1 kosong
         if (model.getRowCount() == 0) {
             JOptionPane.showMessageDialog(null, "Data masih kosong", "Peringatan", JOptionPane.WARNING_MESSAGE);
             return; // Hentikan proses jika tidak ada data
         }
-
+        
         // Membuat file chooser untuk memilih lokasi penyimpanan
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Pilih lokasi penyimpanan file CSV");
-
-        // Filter hanya untuk file CSV
+        // Membatasi pilihan hanya untuk file dengan ekstensi CSV
         fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("CSV files", "csv"));
-
-        // Jika pengguna mengklik tombol simpan
+        
+        // Menampilkan dialog simpan dan memeriksa jika pengguna menekan tombol simpan
         int userSelection = fileChooser.showSaveDialog(this);
         if (userSelection == JFileChooser.APPROVE_OPTION) {
+             // Mendapatkan file yang dipilih pengguna
             File fileToSave = fileChooser.getSelectedFile();
-
-            // Pastikan file memiliki ekstensi .csv
+            // Menambahkan ekstensi .csv jika belum ada
             if (!fileToSave.getAbsolutePath().endsWith(".csv")) {
                 fileToSave = new File(fileToSave + ".csv");
             }
-
+            // Mencoba menulis data ke file CSV
             try (PrintWriter writer = new PrintWriter(fileToSave)) {
                 int columnCount = model.getColumnCount();
-
-                // Menulis header kolom
+                // Menulis header kolom ke file
                 for (int i = 0; i < columnCount; i++) {
-                    writer.print(model.getColumnName(i));
-                    if (i < columnCount - 1) writer.print(","); // Tambahkan koma jika bukan kolom terakhir
+                    writer.print(model.getColumnName(i)); // Menulis nama kolom
+                    if (i < columnCount - 1) writer.print(","); // Menambahkan koma kecuali pada kolom terakhir
                 }
-                writer.println();
-
-                // Menulis data baris
+                writer.println(); // Pindah ke baris baru setelah header
+                // Menulis data setiap baris
                 for (int row = 0; row < model.getRowCount(); row++) {
                     for (int col = 0; col < columnCount; col++) {
-                        writer.print(model.getValueAt(row, col).toString());
-                        if (col < columnCount - 1) writer.print(","); // Tambahkan koma jika bukan kolom terakhir
+                        writer.print(model.getValueAt(row, col).toString()); // Menulis data dari setiap sel
+                        if (col < columnCount - 1) writer.print(","); // Menambahkan koma kecuali pada kolom terakhir
                     }
-                    writer.println();
+                    writer.println(); // Pindah ke baris baru setelah setiap baris data
                 }
-
+                 // Menampilkan pesan sukses setelah data berhasil disimpan
                 JOptionPane.showMessageDialog(this, "Data berhasil disimpan ke file CSV.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception ex) {
+                // Menampilkan pesan error jika terjadi masalah saat penyimpanan file
                 JOptionPane.showMessageDialog(this, "Error saat menyimpan file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
+    
     private void resetData() {
+         // Mendapatkan model dari jTable1 untuk akses data yang ditampilkan di tabel
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-
          // Cek apakah jTable1 kosong
          if (model.getRowCount() == 0) {
              JOptionPane.showMessageDialog(null, "Data masih kosong", "Peringatan", JOptionPane.WARNING_MESSAGE);
              return; // Hentikan proses jika tidak ada data
          }
-
-         // Tampilkan pesan peringatan awal
+        // Menampilkan pesan peringatan agar pengguna menyimpan data terlebih dahulu
          JOptionPane.showMessageDialog(null, 
              "Pastikan Anda sudah melakukan simpan data sebelum melakukan reset data.", 
              "Peringatan", JOptionPane.WARNING_MESSAGE);
-
-         // Konfirmasi penghapusan data
+         // Menampilkan konfirmasi sebelum menghapus data
          int response = JOptionPane.showConfirmDialog(null, 
              "Yakin ingin menghapus semua data?", "Konfirmasi", 
              JOptionPane.YES_NO_OPTION);
-
+         // Jika pengguna memilih YA pada dialog konfirmasi
          if (response == JOptionPane.YES_OPTION) {
-             // Hapus semua data di database
+               // Menghubungkan ke database untuk menghapus semua data
              try (Connection conn = DatabaseConnection.connect();
                   Statement stmt = conn.createStatement()) {
-
-                 // Hapus data (bukan tabel) dari tabel transaksi
+                 // Query untuk menghapus semua data dari tabel transaksi
                  String sql = "DELETE FROM transaksi";
-                 stmt.executeUpdate(sql);
-
-                 // Kosongkan jTable1
-                 model.setRowCount(0); // Menghapus semua baris dari jTable1
-
-                 // Setel jLabel7 dan jLabel9 ke 0
-                 jLabel7.setText("0"); // Reset total pemasukan
-                 jLabel9.setText("0"); // Reset total pengeluaran
-
+                 stmt.executeUpdate(sql); // Eksekusi query untuk menghapus data
+                 // Menghapus semua baris dari jTable1
+                 model.setRowCount(0); // Membersihkan tampilan tabel
+                 // Mengatur ulang jLabel7 dan jLabel9 menjadi 0 untuk pemasukan dan pengeluaran
+                 jLabel7.setText("0"); // Mengatur ulang total pemasukan
+                 jLabel9.setText("0"); // Mengatur ulang total pengeluaran
+                 // Menampilkan pesan sukses setelah semua data berhasil dihapus
                  JOptionPane.showMessageDialog(null, "Semua data berhasil dihapus.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
-
              } catch (SQLException e) {
+                 // Menampilkan pesan error jika terjadi kesalahan saat menghapus data
                  JOptionPane.showMessageDialog(null, "Error saat menghapus data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
              }
          }
     }
+    
     private void importData() {
-    // Membuat file chooser untuk memilih file CSV
-    JFileChooser fileChooser = new JFileChooser();
-    fileChooser.setDialogTitle("Pilih file CSV untuk diimpor");
-    fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("CSV files", "csv"));
+        // Membuat file chooser untuk memilih file CSV
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Pilih file CSV untuk diimpor");
+        fileChooser.setFileFilter(new javax.swing.filechooser.FileNameExtensionFilter("CSV files", "csv"));
 
-    // Jika pengguna memilih file
-    int userSelection = fileChooser.showOpenDialog(this);
-    if (userSelection == JFileChooser.APPROVE_OPTION) {
-        File fileToImport = fileChooser.getSelectedFile();
+        // Jika pengguna memilih file
+        int userSelection = fileChooser.showOpenDialog(this);
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToImport = fileChooser.getSelectedFile(); // Mendapatkan file yang dipilih
 
-        try (BufferedReader br = new BufferedReader(new FileReader(fileToImport))) {
-            // Konfirmasi penghapusan data yang sudah ada sebelum impor
-            int confirm = JOptionPane.showConfirmDialog(this, 
-                "Mengimpor data baru akan menghapus semua data saat ini. Pastikan Anda sudah melakukan Simpan Data terlebih dahulu. Lanjutkan?", 
-                "Konfirmasi Impor Data", JOptionPane.YES_NO_OPTION);
-            if (confirm != JOptionPane.YES_OPTION) {
-                return; // Batalkan impor jika pengguna memilih "NO"
-            }
-
-            // Kosongkan jTable1 dan database sebelum impor
-            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-            model.setRowCount(0); // Mengosongkan jTable1
-
-            // Hapus data di database
-            try (Connection conn = DatabaseConnection.connect();
-                 Statement stmt = conn.createStatement()) {
-                stmt.executeUpdate("DELETE FROM transaksi");
-            }
-
-            String line;
-            boolean isFirstLine = true; // Untuk melewati header pada baris pertama jika ada
-            Connection conn = DatabaseConnection.connect();
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO transaksi (kategori, nominal, tanggal, keterangan) VALUES (?, ?, ?, ?)");
-
-            // Format untuk menampilkan tanggal di jTable1
-            SimpleDateFormat dateFormatForDisplay = new SimpleDateFormat("dd-MM-yyyy");
-            // Format untuk menyimpan tanggal di database
-            SimpleDateFormat dateFormatForDB = new SimpleDateFormat("yyyy-MM-dd");
-
-            // Baca setiap baris file CSV
-            while ((line = br.readLine()) != null) {
-                // Lewati header pada baris pertama jika ada
-                if (isFirstLine) {
-                    isFirstLine = false;
-                    continue;
+            try (BufferedReader br = new BufferedReader(new FileReader(fileToImport))) {
+                // Konfirmasi penghapusan data yang sudah ada sebelum impor
+                int confirm = JOptionPane.showConfirmDialog(this, 
+                    "Mengimpor data baru akan menghapus semua data saat ini. Pastikan Anda sudah melakukan Simpan Data terlebih dahulu. Lanjutkan?", 
+                    "Konfirmasi Impor Data", JOptionPane.YES_NO_OPTION);
+                if (confirm != JOptionPane.YES_OPTION) {
+                    return; // Batalkan impor jika pengguna memilih "NO"
                 }
 
-                // Pisahkan nilai-nilai berdasarkan koma (CSV)
-                String[] values = line.split(",");
-                if (values.length == 5) { // Pastikan ada 5 kolom data, termasuk id
-                    // Ambil data sesuai kolom (abaikan kolom id)
-                    String kategori = values[0]; // Kategori di kolom pertama
-                    int nominal = Integer.parseInt(values[1].trim()); // Nominal di kolom kedua
-                    String tanggalString = values[2].trim(); // Tanggal di kolom ketiga
-                    String keterangan = values[3].trim(); // Keterangan di kolom keempat
+                // Kosongkan jTable1 dan database sebelum impor
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                model.setRowCount(0); // Mengosongkan jTable1
 
-                    // Parse tanggal dari format dd-MM-yyyy (format tampilan yang diinginkan)
-                    java.util.Date parsedDate = new SimpleDateFormat("dd-MM-yyyy").parse(tanggalString);
-                    // Format tanggal menjadi yyyy-MM-dd untuk disimpan di database
-                    String formattedDateForDB = dateFormatForDB.format(parsedDate);
-
-                    // Tambahkan data ke jTable1 (tanpa kolom id), tampilkan tanggal dengan format dd-MM-yyyy
-                    model.addRow(new Object[]{kategori, nominal, dateFormatForDisplay.format(parsedDate), keterangan});
-
-                    // Simpan data ke database (tanpa kolom id)
-                    pstmt.setString(1, kategori); // Set kategori
-                    pstmt.setInt(2, nominal); // Set nominal
-                    pstmt.setString(3, formattedDateForDB); // Simpan tanggal dalam format yyyy-MM-dd
-                    pstmt.setString(4, keterangan); // Set keterangan
-                    pstmt.addBatch(); // Tambahkan ke batch query
+                // Hapus data di database
+                try (Connection conn = DatabaseConnection.connect();
+                     Statement stmt = conn.createStatement()) {
+                    stmt.executeUpdate("DELETE FROM transaksi");
                 }
+
+                String line;
+                boolean isFirstLine = true; // Untuk melewati header pada baris pertama jika ada
+                Connection conn = DatabaseConnection.connect();
+                PreparedStatement pstmt = conn.prepareStatement("INSERT INTO transaksi (kategori, nominal, tanggal, keterangan) VALUES (?, ?, ?, ?)");
+
+                // Format untuk menampilkan tanggal di jTable1
+                SimpleDateFormat dateFormatForDisplay = new SimpleDateFormat("dd-MM-yyyy");
+                // Format untuk menyimpan tanggal di database
+                SimpleDateFormat dateFormatForDB = new SimpleDateFormat("yyyy-MM-dd");
+
+                // Baca setiap baris file CSV
+                while ((line = br.readLine()) != null) {
+                    // Lewati header pada baris pertama jika ada
+                    if (isFirstLine) {
+                        isFirstLine = false;
+                        continue;
+                    }
+
+                    // Memisahkan data berdasarkan koma (format CSV)
+                    String[] values = line.split(",");
+                    if (values.length == 5) { // Pastikan ada 5 kolom data, termasuk id
+                        // Ambil data sesuai kolom (abaikan kolom id)
+                        String kategori = values[0]; // Kategori di kolom pertama
+                        int nominal = Integer.parseInt(values[1].trim()); // Nominal di kolom kedua
+                        String tanggalString = values[2].trim(); // Tanggal di kolom ketiga
+                        String keterangan = values[3].trim(); // Keterangan di kolom keempat
+
+                        // Parse tanggal dari format dd-MM-yyyy (format tampilan yang diinginkan)
+                        java.util.Date parsedDate = new SimpleDateFormat("dd-MM-yyyy").parse(tanggalString);
+                        // Format tanggal menjadi yyyy-MM-dd untuk disimpan di database
+                        String formattedDateForDB = dateFormatForDB.format(parsedDate);
+
+                        // Tambahkan data ke jTable1 (tanpa kolom id), tampilkan tanggal dengan format dd-MM-yyyy
+                        model.addRow(new Object[]{kategori, nominal, dateFormatForDisplay.format(parsedDate), keterangan});
+
+                        // Simpan data ke database (tanpa kolom id)
+                        pstmt.setString(1, kategori); // Menyimpan kategori
+                        pstmt.setInt(2, nominal); // Menyimpan nominal
+                        pstmt.setString(3, formattedDateForDB);  // Menyimpan tanggal dalam format yyyy-MM-dd
+                        pstmt.setString(4, keterangan); // Menyimpan keterangan
+                        pstmt.addBatch(); // Tambahkan ke batch query
+                    }
+                }
+
+                pstmt.executeBatch(); // Menyimpan semua data yang diimpor ke database
+                conn.close(); // Tutup koneksi database
+                 // Menampilkan pesan sukses impor
+                JOptionPane.showMessageDialog(this, "Data berhasil diimpor dari file CSV.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
+
+                // Update total pemasukan dan pengeluaran setelah data diimpor
+                hitungTotal();
+
+            } catch (Exception ex) {
+                // Menangani jika terjadi kesalahan
+                JOptionPane.showMessageDialog(this, "Error saat mengimpor data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
-
-            pstmt.executeBatch(); // Menyimpan semua data yang diimpor ke database
-            conn.close(); // Tutup koneksi database
-
-            JOptionPane.showMessageDialog(this, "Data berhasil diimpor dari file CSV.", "Informasi", JOptionPane.INFORMATION_MESSAGE);
-
-            // Update total pemasukan dan pengeluaran setelah data diimpor
-            hitungTotal();
-
-        } catch (Exception ex) {
-            // Menangani jika terjadi kesalahan
-            JOptionPane.showMessageDialog(this, "Error saat mengimpor data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-}
-
+    
 }
