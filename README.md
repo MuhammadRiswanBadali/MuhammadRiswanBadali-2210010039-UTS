@@ -56,7 +56,7 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
 1. Tampilan awal aplikasi.<br>
    <img width="567" alt="1" src="https://github.com/user-attachments/assets/3c90600d-93ff-4503-9c88-33182eb23dde"><br>
 <br>
-2. Tampilan ketika menekan button Tambah Transaksi, tetapi inputan belum terisi semua :<br>
+2. Tampilan ketika menekan button Tambah Transaksi, tetapi inputan belum terisi semua :
    a. kategori transaksi belum di pilih<br>
        <img width="569" alt="2" src="https://github.com/user-attachments/assets/6c38775f-2952-4d03-abee-44127f971e7d"><br>
    b. Belum menginputkan nominal<br>
