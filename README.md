@@ -46,7 +46,7 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
   - Jika data tidak ada yang dipilih pada tabel lalu menekan button Edit, maka akan muncul peringatan.
 - Ada button Hapus untuk menghapus data. dengan cara pilih dahulu salah satu data yang pada tabel, lalu tekan button Hapus.
   - Jika data tidak ada yang dipilih pada tabel lalu menekan button Hapus, maka akan muncul peringatan.
-- Ada button Simpan data, untuk melakukan penyimpana seluruh data yang ada pada tabel, dan kita dapat memilih lokasi simpannya. Jika tabel masih kosong, lalu menekan button Simpan Data maka akan muncul peringatan.
+- Ada button Simpan data, untuk melakukan penyimpana seluruh data yang ada pada tabel, dan pengguna dapat memilih lokasi simpannya. Jika tabel masih kosong, lalu menekan button Simpan Data maka akan muncul peringatan.
 - Ada button Reset Data ketika di tekan muncul peringatan, lalu di lanjutkan dengan konfirmasi "yes" atau "no".
 - Ada button Import Data ketika di tekan pengguna dapat memasukkan file yang sesuai dengan format aplikasi yang dibuat, setelah itu muncul konfirmasi "yes" dan "no" beserta isi pesannya.
   - Misalnya untuk mencekak file keuangan pribadi di bulan bulan sebelumnya. yang telah disimpan.
@@ -66,10 +66,21 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
       <img width="566" alt="image" src="https://github.com/user-attachments/assets/dc3dcdfe-7bbf-48ad-bae4-f671f40f6fe6"><br>
 3. Tampilan ketika semua inputan terisi, lalu menekan button Tambah Transaksi<br>
 <img width="566" alt="image" src="https://github.com/user-attachments/assets/8f2f187a-9b08-4182-a47c-910a6a82d4ab"><br>
-4. Semua data yang di inputkan tadi masuk ke tabel dan untuk total keseluruhan pemasukan juga masuk ke panel pemasukan<br>
+4. Semua data yang di inputkan tadi secara otomastis masuk ke tabel dan kolom inputan secara otomatis menjadi kosong. Untuk total keseluruhan pemasukan juga masuk ke panel pemasukan<br>
 <img width="569" alt="image" src="https://github.com/user-attachments/assets/2a590733-3b2c-4d6a-888e-31df1641d7d1"><br>
 5. Menginputkan dengan kategori pengeluaran<br>
 <img width="568" alt="image" src="https://github.com/user-attachments/assets/3a75e343-e84c-4645-a62e-156699b6d1f5"><br>
+6. Ketika pengguna menekan salah satu data yang ada pada tabel, maka data secara otomatis mengisi ke kolom inputan. dan jika ingin mengosongkan kolom inputan cukup tekan button Clear saja<br>
+<img width="564" alt="image" src="https://github.com/user-attachments/assets/9447be93-41a8-4736-9e81-69890bdf7774"><br>
+7. Dibagian panel Filter Data, pengguna mencari data berdasarkan :<br>
+   a. Data sebelum di filter<br>
+   <img width="567" alt="image" src="https://github.com/user-attachments/assets/04ebd929-7457-4abf-ab44-15ec8e9a4a9d"><br>
+   b. Mencari berdasarkan kategori Transaksi Pemasukan<br>
+   <img width="568" alt="image" src="https://github.com/user-attachments/assets/305f4a25-6f6e-4ce1-83ec-063dd09e843a"><br>
+   c.  Mencari berdasarkan kategori Transaksi Pengeluaran<br>
+   <img width="568" alt="image" src="https://github.com/user-attachments/assets/100e84d4-1585-4449-b385-49d78cbe603c">
+
+
 
 
 
