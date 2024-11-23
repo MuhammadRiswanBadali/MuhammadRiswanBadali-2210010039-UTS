@@ -33,7 +33,7 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
   - Ada button Tambah Transaksi, yang mana jika di tekan maka semua yang di inputkan tadi akan masuk ke dalam tabel. Dan juga akan langsung mengosongkan kolom inputan
   - Ada Button Clear untuk membersihkan kolom inputan jika diperlukan.
   - Setiap kolom inputan harus terisi, jika tidak saat button Tambah Transaksi di tekan program tidak akan jalan, dan akan muncul peringatan beserta pesannya.
-  - Pada JComboBox pengguna hanya dapat memilih pemasukan atau pengeluaran saja. tidak dapat memilih "~Pilih Kategori Transaksi~".
+  - Pada JComboBox pengguna hanya dapat memilih pemasukan atau pengeluaran saja. tidak dapat memilih "Pilih Kategori Transaksi".
     
 - Panel Filter Data, pengguna dapat melakukan :
   - Memfilter data yang ada pada tabel berdasarkan kategori transaksi yang dapat dipilih melalui jComboBox (pemasukan atau pengeluaran), ketika dipilih maka datanya langsung tampil di tabel.
