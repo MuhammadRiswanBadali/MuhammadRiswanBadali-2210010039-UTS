@@ -75,7 +75,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 255, 255));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Panel Input "));
 
@@ -353,7 +353,7 @@ public class KeuanganPribadiFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(247, 247, 247)
                         .addComponent(jLabel1)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
