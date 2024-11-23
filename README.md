@@ -22,7 +22,7 @@ Kelas  : REG PAGI 5B BJB<br>
 - Anda diperbolehkan untuk menggunakan library eksternal atau framework tambahan jika diperlukan.
 
 # APLIKASI YANG SAYA BUAT
-Aplikasi yang saya pilih adalah pada UTS ini adalah, Aplikasi Keuangan Pribadi.
+Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
 
 # FITUR PADA APLIKASI YANG SAYA BUAT (APLIKASI KEUANGAN PRIBADI)
 - Panel input, pengguna dapat melakukan :
