@@ -80,8 +80,8 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
    c. Mencari berdasarkan kategori Transaksi Pengeluaran<br>
    <img width="566" alt="image" src="https://github.com/user-attachments/assets/7bb0551e-9ded-4c81-b0ce-b73d077b514d"><br>
    d. Mencari berdasarkan tanggal yang dipilih<br>
-      - <img width="569" alt="image" src="https://github.com/user-attachments/assets/302fe82b-a723-46d0-9251-924a67030346"><br>
-      - <img width="567" alt="image" src="https://github.com/user-attachments/assets/c02a8b90-0a91-4b7e-a34a-132e895a4ebd"><br>
+       <img width="569" alt="image" src="https://github.com/user-attachments/assets/302fe82b-a723-46d0-9251-924a67030346"><br>
+       <img width="567" alt="image" src="https://github.com/user-attachments/assets/c02a8b90-0a91-4b7e-a34a-132e895a4ebd"><br>
    e. untuk mencari data yang lebih spesifik bisa gunakan keduanya berdasarkan kategori dan tanggal<br>
    <img width="566" alt="image" src="https://github.com/user-attachments/assets/d0024ece-9d3d-4bb8-9b9d-5afb14e4c8bb"><br>
    f. Gunakan button Clear pada panel Filter Data untuk mengosongkan kolom inputan filter data. dan data di tampilkan keseluruhan kembali pada tabel<br>
