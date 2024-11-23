@@ -41,14 +41,14 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
   - Dapat juga di gunakan berbarengan secara langsung, untuk menemukan data yang lebih spesifik.
   - Ada button Clear untuk membersihkan inputan filter data.
 
-- Terdapat satu Tabel untuk menampilakan semua data yang telah di inputkan.
-- Ada button Edit untuk mengedit data. dengan cara pilih dahulu salah satu data yang pada tabel setelah itu data secara otomatis masuk ke kolom inputan awal, setelah itu lakukan perubahan lalu tekan button Edit.
+- Terdapat satu Tabel untuk menampilkan semua data yang telah di inputkan.
+- Ada button Edit untuk mengedit data. dengan cara pilih dahulu salah satu data yang ada pada tabel setelah itu data secara otomatis masuk ke kolom inputan awal, setelah itu lakukan perubahan lalu tekan button Edit.
   - Jika data tidak ada yang dipilih pada tabel lalu menekan button Edit, maka akan muncul peringatan.
-- Ada button Hapus untuk menghapus data. dengan cara pilih dahulu salah satu data yang pada tabel, lalu tekan button Hapus.
+- Ada button Hapus untuk menghapus data. dengan cara pilih dahulu salah satu data yang ada pada tabel, lalu tekan button Hapus.
   - Jika data tidak ada yang dipilih pada tabel lalu menekan button Hapus, maka akan muncul peringatan.
 - Ada button Simpan data, untuk melakukan penyimpana seluruh data yang ada pada tabel, dan pengguna dapat memilih lokasi simpannya. Jika tabel masih kosong, lalu menekan button Simpan Data maka akan muncul peringatan.
 - Ada button Reset Data ketika di tekan muncul peringatan, lalu di lanjutkan dengan konfirmasi "yes" atau "no".
-- Ada button Import Data ketika di tekan pengguna dapat memasukkan file yang sesuai dengan format aplikasi yang dibuat, setelah itu muncul konfirmasi "yes" dan "no" beserta isi pesannya.
+- Ada button Import Data ketika di tekan pengguna dapat memasukkan file sesuai dengan format aplikasi yang dibuat, setelah itu muncul konfirmasi "yes" dan "no" beserta isi pesannya.
   - Misalnya untuk mencekak file keuangan pribadi di bulan bulan sebelumnya. yang telah disimpan.
 - Terdapat dua panel lagi pada bagian bawah untuk menampilkan total keseluruhan pemasukan dan pengeluaran.
 
@@ -66,7 +66,7 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
        <img width="566" alt="image" src="https://github.com/user-attachments/assets/dc3dcdfe-7bbf-48ad-bae4-f671f40f6fe6"><br>
 3. Tampilan ketika semua inputan terisi, lalu menekan button Tambah Transaksi<br>
 <img width="566" alt="image" src="https://github.com/user-attachments/assets/8f2f187a-9b08-4182-a47c-910a6a82d4ab"><br>
-4. Semua data yang di inputkan tadi secara otomastis masuk ke tabel dan kolom inputan secara otomatis menjadi kosong. Untuk total keseluruhan pemasukan juga masuk ke panel pemasukan<br>
+4. Semua data yang di inputkan tadi secara otomastis masuk ke tabel dan kolom inputan secara otomatis menjadi kosong. Untuk total keseluruhan pemasukan akan masuk ke panel Pemasukan<br>
 <img width="569" alt="image" src="https://github.com/user-attachments/assets/2a590733-3b2c-4d6a-888e-31df1641d7d1"><br>
 5. Menginputkan dengan kategori transaksi pengeluaran<br>
 <img width="568" alt="image" src="https://github.com/user-attachments/assets/3a75e343-e84c-4645-a62e-156699b6d1f5"><br>
@@ -88,13 +88,13 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
 8. Button Edit<br>
     - Menekan button Edit tapi belum memilih data yang ada pada tabel<br>
       <img width="564" alt="image" src="https://github.com/user-attachments/assets/87d4fefd-9948-4f11-8cb7-3e538eeaff1d"><br>
-    - Menekan salah satu data yang ada pada tabel, maka data akan mengisi kolom inputan secara otomatis dan lakukan perubahan yang pengguna inginkan lalu tekan button Edit<br>
+    - Menekan salah satu data yang ada pada tabel, maka data akan mengisi kolom inputan secara otomatis. Lakukan perubahan, setelah selesai melakukan perubahan tekan button Edit<br>
         - Data awal<br>
           <img width="569" alt="image" src="https://github.com/user-attachments/assets/d9b0a57f-1ddc-46d6-9811-b6f7f4202add"><br>
         - Konfirmasih setelah menekan button edit<br>
           <img width="212" alt="image" src="https://github.com/user-attachments/assets/1eabe786-9d0d-4dec-856c-db64152a6e0f"><br>
           <img width="195" alt="image" src="https://github.com/user-attachments/assets/c0beb9f4-798f-415c-9639-6bfcae216e5d"><br>
-        - Data setelah di edit, total pengeluaran pada panel yang dibawah juga diperbaharui<br>
+        - Data setelah di edit, total pengeluaran pada panel Pengeluaran langsung terupdate otomatis<br>
           <img width="569" alt="image" src="https://github.com/user-attachments/assets/e7a13bdc-6453-400b-8777-d5b11ea38d3d"><br>
 9. Button Hapus<br>
     - Menekan button Hapus tapi belum memilih data yang ada pada tabel<br>
@@ -103,7 +103,7 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
         - Konfirmasi setelah menekan button Hapus<br>
           <img width="224" alt="image" src="https://github.com/user-attachments/assets/158fffcc-b450-42b3-9d1a-218bdc90074f"><br>
           <img width="203" alt="image" src="https://github.com/user-attachments/assets/5df7554e-e592-4808-9bcd-6a0e367e66ba"><br>
-        - Data yang di hapus sudah tidak ada dalam tabel, dan total pengeluaran pada panel yang ada di bawah secara langsung terupdate<br>
+        - Data yang di hapus (Pengeluaran, 300000, 02-11-2024, Beli tas) sudah tidak ada dalam tabel, dan total pengeluaran pada panel Pengeluaran langsung terupdate otomatis<br>
           <img width="563" alt="image" src="https://github.com/user-attachments/assets/afb76960-aba5-4bc1-8bbd-029393813416"><br>
 10. Menekan button Simpan Data, dan pengguna dapat langsung memilih sendiri lokasi menyimpan file data<br>
 <img width="219" alt="image" src="https://github.com/user-attachments/assets/27800c84-263d-48a4-8c13-0524f8d1fcea"><br>
@@ -115,7 +115,7 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
 <img width="203" alt="image" src="https://github.com/user-attachments/assets/33b1609b-18cd-4126-9f44-a8770409c95c"><br>
     - Setelah memilih pilihan "yes" maka semua data akan terhapus<br>
       <img width="566" alt="image" src="https://github.com/user-attachments/assets/8716db2d-b1dd-4c25-b9d9-75bff9bb903b"><br>
-12. Menekan button Import Data, lalu pilih file data yang kita mau import<br>
+12. Menekan button Import Data, lalu pilih file data yang kita mau import dan klik open<br>
 <img width="566" alt="image" src="https://github.com/user-attachments/assets/39dfc33e-93ea-43b9-a250-cddb45bc7228"><br>
     - Muncul Konfirmasi<br>
       <img width="605" alt="image" src="https://github.com/user-attachments/assets/268e96ff-b9ce-4b2f-9033-0f4560fdcdd9"><br>
