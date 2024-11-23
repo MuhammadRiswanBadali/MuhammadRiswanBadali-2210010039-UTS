@@ -100,10 +100,10 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
      a. Menekan button Hapus tapi belum memilih data yang ada pada tabel<br>
         <img width="565" alt="image" src="https://github.com/user-attachments/assets/d5dc8a59-6596-465f-962e-a39825d85591"><br>
      b. Menekan salah satu data yang ingin di hapus pada tabel, lalu tekan button Hapus<br>
-        - Konfirmasi setelah menekan button Hapus<br>
+         - Konfirmasi setelah menekan button Hapus<br>
           <img width="224" alt="image" src="https://github.com/user-attachments/assets/158fffcc-b450-42b3-9d1a-218bdc90074f"><br>
           <img width="203" alt="image" src="https://github.com/user-attachments/assets/5df7554e-e592-4808-9bcd-6a0e367e66ba"><br>
-        - Data yang di hapus sudah tidak ada dalam tabel, dan total pengeluaran pada panel yang ada di bawah secara langsung terupdate<br>
+          - Data yang di hapus sudah tidak ada dalam tabel, dan total pengeluaran pada panel yang ada di bawah secara langsung terupdate<br>
           <img width="563" alt="image" src="https://github.com/user-attachments/assets/afb76960-aba5-4bc1-8bbd-029393813416"><br>
 10. Menekan button Simpan Data, dan pengguna dapat langsung memilih sendiri lokasi menyimpan file data<br>
     <img width="219" alt="image" src="https://github.com/user-attachments/assets/27800c84-263d-48a4-8c13-0524f8d1fcea"><br>
