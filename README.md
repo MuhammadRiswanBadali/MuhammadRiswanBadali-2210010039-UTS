@@ -1,13 +1,11 @@
 # BIODATA
-NAMA   : Muhammad Riswan Badali
-NPM    : 2210010039
-Kelas  : REG PAGI 5B BJB
+NAMA   : Muhammad Riswan Badali<br>
+NPM    : 2210010039<br>
+Kelas  : REG PAGI 5B BJB<br>
 
 # UJIAN TENGAH SEMESTER (UTS)
-
-# BENTUK UJIAN TENGAH SEMESTER :
-- Bentuk ujian tengah semester (UTS) adalah pembuatan sebuah aplikasi GUI sederhana.
-- Spesifikasi aplikasi :
+- Bentuk ujian tengah semester (UTS) adalah pembuatan sebuah aplikasi GUI sederhana.<br>
+- Spesifikasi aplikasi :<br>
   - Dalam pembuatan aplikasinya harus menerapkan konsep pemrograman berorientasi objek.
   - Gunakan berbagai komponen GUI seperti JFrame, JPanel, JTextArea, JList, JButton, dll.
   - Aplikasi harus memiliki kemampuan untuk menambah, mengubah, dan menghapus entri.
