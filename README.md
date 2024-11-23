@@ -27,7 +27,7 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
 # FITUR PADA APLIKASI YANG SAYA BUAT (APLIKASI KEUANGAN PRIBADI)
 - Panel input, pengguna dapat melakukan :
   - Pemilihan kategori transaksi (Pengeluaran atau Pemasukan).
-  - Menginputkan Nominal yang hanya dapat dimsaukkan berupa angka, jika pengguna mencoba menginputkan huruf maka tidak bisa.
+  - Menginputkan Nominal yang hanya dapat dimasukkan berupa angka, jika pengguna mencoba menginputkan huruf maka tidak bisa.
   - Memilih tanggal.
   - Memasukkan keterangan.
   - Ada button Tambah Transaksi, yang mana jika di tekan maka semua yang di inputkan tadi akan masuk ke dalam tabel. Dan juga akan langsung mengosongkan kolom inputan
