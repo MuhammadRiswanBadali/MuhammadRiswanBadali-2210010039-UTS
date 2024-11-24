@@ -25,7 +25,7 @@ Kelas  : REG PAGI 5B BJB<br>
 Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
 
 # FITUR PADA APLIKASI YANG SAYA BUAT (APLIKASI KEUANGAN PRIBADI)
-- Panel input, pengguna dapat melakukan :
+- Panel Input, pengguna dapat melakukan :
   - Pemilihan kategori transaksi (Pengeluaran atau Pemasukan).
   - Menginputkan Nominal yang hanya dapat dimasukkan berupa angka, jika pengguna mencoba menginputkan huruf maka tidak bisa.
   - Memilih tanggal.
