@@ -49,7 +49,7 @@ Aplikasi yang saya pilih pada UTS ini adalah membuat Aplikasi Keuangan Pribadi.
 - Ada button Simpan data, untuk melakukan penyimpana seluruh data yang ada pada tabel, dan pengguna dapat memilih lokasi simpannya. Jika tabel masih kosong, lalu menekan button Simpan Data maka akan muncul peringatan.
 - Ada button Reset Data ketika di tekan muncul peringatan, lalu di lanjutkan dengan konfirmasi "yes" atau "no".
 - Ada button Import Data ketika di tekan pengguna dapat memasukkan file sesuai dengan format aplikasi yang dibuat, setelah itu muncul konfirmasi "yes" dan "no" beserta isi pesannya.
-  - Misalnya untuk mencekak file keuangan pribadi di bulan bulan sebelumnya. yang telah disimpan.
+  - Misalnya untuk mencek file keuangan pribadi di bulan bulan sebelumnya yang telah disimpan.
 - Terdapat dua panel lagi pada bagian bawah untuk menampilkan total keseluruhan pemasukan dan pengeluaran.
 
 # TAMPILAN APLIKASI YANG DIBUAT (KEUANGAN PRIBADI)
